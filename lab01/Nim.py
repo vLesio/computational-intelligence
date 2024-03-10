@@ -296,7 +296,7 @@ if __name__ == "__main__":
     print(f'=========== Deterministic game ===========')
     
     winCounter = {1: 0, 2: 0}
-    ai = Negamax(4)
+    ai = Negamax(2)
     game = Nim([AI_Player(ai), AI_Player(ai)])
     print(f'Max deep 4')
 
