@@ -1,7 +1,7 @@
 from copy import deepcopy
 import random
 from easyAI import TwoPlayerGame
-
+import time
 
 
 
@@ -237,6 +237,8 @@ if __name__ == "__main__":
 
     # Now let's play (and lose !) against the AI
     
+    number_of_games = 20
+    
     print(f'=========== Deterministic game ===========')
     
     winCounter = {1: 0, 2: 0}
@@ -244,7 +246,8 @@ if __name__ == "__main__":
     game = Nim([AI_Player(ai), AI_Player(ai)])
     print(f'Max deep 8')
 
-    for i in range(10):
+    time_of_games = time.time()
+    for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
         game.rollStartingPlayer()
@@ -255,7 +258,7 @@ if __name__ == "__main__":
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
     
     with open('./outputs/deterministic', 'a') as f:
-        f.write(f'Deterministic, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
+        f.write(f'Deterministic, game_duration={time.time() - time_of_games}, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
         
         
     print(f'=========== Probabilistic game ===========')
@@ -264,7 +267,8 @@ if __name__ == "__main__":
     game = NimProba([AI_Player(ai), AI_Player(ai)])
     print(f'Max deep 8')
     
-    for i in range(10):
+    time_of_games = time.time()
+    for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
         game.rollStartingPlayer()
@@ -275,7 +279,7 @@ if __name__ == "__main__":
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
 
     with open('./outputs/probabilistic', 'a') as f:
-        f.write(f'Probabilistic, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
+        f.write(f'Probabilistic, game_duration={time.time() - time_of_games}, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
 
 
     print(f'=========== Deterministic game ===========')
@@ -285,7 +289,8 @@ if __name__ == "__main__":
     game = Nim([AI_Player(ai), AI_Player(ai)])
     print(f'Max deep 4')
 
-    for i in range(10):
+    time_of_games = time.time()
+    for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
         game.rollStartingPlayer()
@@ -296,7 +301,7 @@ if __name__ == "__main__":
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
 
     with open('./outputs/deterministic', 'a') as f:
-        f.write(f'Deterministic, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
+        f.write(f'Deterministic, game_duration={time.time() - time_of_games}, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
         
         
     print(f'=========== Probabilistic game ===========')
@@ -305,7 +310,8 @@ if __name__ == "__main__":
     game = NimProba([AI_Player(ai), AI_Player(ai)])
     print(f'Max deep 4')
     
-    for i in range(10):
+    time_of_games = time.time()
+    for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
         game.rollStartingPlayer()
@@ -316,4 +322,4 @@ if __name__ == "__main__":
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
 
     with open('./outputs/probabilistic', 'a') as f:
-        f.write(f'Probabilistic, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
+        f.write(f'Probabilistic, game_duration={time.time() - time_of_games}, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
