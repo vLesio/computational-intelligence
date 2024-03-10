@@ -253,6 +253,9 @@ if __name__ == "__main__":
         winCounter[game.current_player] += 1
         print("\n\n\nplayer %d wins\n\n\n" % game.current_player)
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
+    
+    with open('./outputs/deterministic', 'a') as f:
+        f.write(f'Deterministic, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
         
         
     print(f'=========== Probabilistic game ===========')
@@ -271,6 +274,9 @@ if __name__ == "__main__":
         print("\n\n\nplayer %d wins\n\n\n" % game.current_player)
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
 
+    with open('./outputs/probabilistic', 'a') as f:
+        f.write(f'Probabilistic, depth 8. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
+
 
     print(f'=========== Deterministic game ===========')
     
@@ -288,6 +294,9 @@ if __name__ == "__main__":
         winCounter[game.current_player] += 1
         print("\n\n\nplayer %d wins\n\n\n" % game.current_player)
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
+
+    with open('./outputs/deterministic', 'a') as f:
+        f.write(f'Deterministic, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
         
         
     print(f'=========== Probabilistic game ===========')
@@ -305,3 +314,6 @@ if __name__ == "__main__":
         winCounter[game.current_player] += 1
         print("\n\n\nplayer %d wins\n\n\n" % game.current_player)
         print(f'current score:\n \t1st player: {winCounter[1]}\n \t2nd player: {winCounter[2]}\n {i+1} games played')
+
+    with open('./outputs/probabilistic', 'a') as f:
+        f.write(f'Probabilistic, depth 4. P1: {winCounter[1]} | P2: {winCounter[2]}\n')
