@@ -33,6 +33,7 @@ class Nim(TwoPlayerGame):
         self.piles = list(piles)
         self.max_removals_per_turn = max_removals_per_turn
         self.current_player = 1  # player 1 starts.
+        self.counter = 0
 
     def possible_moves(self):
         return [
@@ -74,6 +75,10 @@ class Nim(TwoPlayerGame):
         
     def rollStartingPlayer(self):
         self.current_player = random.randint(1, 2)
+        
+    def oppositePlayerStarting(self):
+        self.counter += 1
+        self.current_player = self.counter % 2 + 1
     
     def play(self, nmoves=1000, verbose=True):
         history = []
@@ -141,6 +146,7 @@ class NimProba(TwoPlayerGame):
         self.piles = list(piles)
         self.max_removals_per_turn = max_removals_per_turn
         self.current_player = 1  # player 1 starts.
+        self.counter = 0
 
     def possible_moves(self):
         return [
@@ -157,6 +163,11 @@ class NimProba(TwoPlayerGame):
     def make_move(self, move):
         move = list(map(int, move.split(",")))
         self.piles[move[0] - 1] -= move[1]
+        
+            
+    def oppositePlayerStarting(self):
+        self.counter += 1
+        self.current_player = self.counter % 2 + 1
 
     def unmake_move(self, move):  # optional, speeds up the AI
         move = list(map(int, move.split(",")))
@@ -250,7 +261,7 @@ if __name__ == "__main__":
     for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
-        game.rollStartingPlayer()
+        game.oppositePlayerStarting()
         print(f'starting player: {game.current_player}')
         game.play()
         winCounter[game.current_player] += 1
@@ -271,7 +282,7 @@ if __name__ == "__main__":
     for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
-        game.rollStartingPlayer()
+        game.oppositePlayerStarting()
         print(f'starting player: {game.current_player}')
         game.play()
         winCounter[game.current_player] += 1
@@ -293,7 +304,7 @@ if __name__ == "__main__":
     for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
-        game.rollStartingPlayer()
+        game.oppositePlayerStarting()
         print(f'starting player: {game.current_player}')
         game.play()
         winCounter[game.current_player] += 1
@@ -314,7 +325,7 @@ if __name__ == "__main__":
     for i in range(number_of_games):
         print(f'\n\n Game {i+1} starts\n')
         game.setNewPiles((5, 5, 5, 5))
-        game.rollStartingPlayer()
+        game.oppositePlayerStarting()
         print(f'starting player: {game.current_player}')
         game.play()
         winCounter[game.current_player] += 1
