@@ -91,9 +91,7 @@ Solution:
    --mcc_lab--> (cost: 1)
  3 paths have been expanded and 4 paths remain in the frontier
 [Runner] It took 0.009009122848510742s to find the solution in 100 iterations.
-[Runner] One iteration took on average 9.009122848510742e-05s[Runner] Problem: Go to office [problem0] took 0.00901 (0.00009s on average) to solve.
-[Runner] Problem: [Heuristic] Go to office [problem0] took 0.00500 (0.00005s on average) to solve.
-Heuristic time difference: -0.00401, 80.050% faster
+[Runner] One iteration took on average 9.009122848510742e-05s
 ```
 
 #### Rozwiązanie z heurystyką
