@@ -145,7 +145,13 @@ problem1 = Planning_problem(problem_domain,
 
 #### Heurestyka
 ```python
-
+def heuristic_problem1(state, goal):
+    if state['SamWantsCoffee'] == False:
+        return 0
+    if state['SamWantsCoffee'] == True and state['RobHasCoffee'] == False:
+        return distance(state['RobLocation'], 'coffee_shop') + 1 + distance('coffee_shop', 'office') + 1
+    if state['RobHasCoffee'] == True:
+        return distance(state['RobLocation'], 'office') + 1
 ```
 
 #### Rozwiązanie bez heurystyki
