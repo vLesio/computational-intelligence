@@ -53,14 +53,6 @@ Nasz robot *Rob* może wykonywać następujące akcje:
         Strips('charge', {'RobLocation':'lab', 'RobEnergy':False}, {'RobEnergy': True})
 ```
 
-## Realizacja rozwiązania
-
-Problem został rozwiązany przy pomocy biblioteki ai
-```python
-Poniżej znajduje się lista wykorzystanych klas
-
-```
-
 ## Rozwiązywane problemy
 ### Problem 0 - 'Go to office'
 
